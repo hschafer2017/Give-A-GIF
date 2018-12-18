@@ -5,24 +5,23 @@ h1 {
 }
 body {
     background: #fafafa;
+    background-image: url("computer.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
 }
 
-.jumbotron {
-    background-image: url("https://www.askideas.com/media/83/Keep-smiling...-it-makes-people-wonder-what-youre-up-to.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    padding-top: 10%;
-    padding-bottom: 30%;
+.button {
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 42px;
 }
-.display-4 {
-    text-align:left;
-}
-.sponsored{
-    font-family: 'interface',monospace;
-    color: white;
-}
-.bgsponsored{
-    background-color: black;
+
+#gif-image {
+    position: fixed;
+    left: 40%;
+    top: 17%;
 }
 
 footer {
@@ -34,7 +33,7 @@ footer {
     text-align: center;
 }
 embed {
-    height: 400px;
-    width: 400px;
+    height: 250px;
+    width: 250px;
     text-align: center;
 }
