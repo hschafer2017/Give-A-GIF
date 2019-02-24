@@ -5,7 +5,7 @@ h1 {
 }
 body {
     background: #fafafa;
-    background-image: url("computer.jpg");
+    background-image: url("../images/computer.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;

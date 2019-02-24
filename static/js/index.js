@@ -1,4 +1,4 @@
-let commands = ["Funny", "Happy", "Sad", "Hilarious", "Crazy", "Angry", "Donald+Trump", "Vladmir+Putin", "Obama", "OMG", 'cats', 'typing', 'crazy', 'laughing', 'WTF', 'NO', 'why', 'election+2016', 'Trump', 'dogs', 'wrong', 'The+Office', 'Samantha+Jones', 'Spongebob'];
+let commands = ["Funny", "Happy", "Sad", "Hilarious", "Crazy", "Angry", "Donald+Trump", "Vladmir+Putin", "Obama", "OMG", 'cats', 'typing', 'crazy', 'laughing', 'WTF', 'NO', 'why', 'election+2016', 'Dwight+Schrute', 'Michael+Scott', 'Trump', 'dogs', 'wrong', 'The+Office', 'Samantha+Jones', 'Spongebob'];
 let request = new XMLHttpRequest();
 
 function displayGIFNicely(apiData) {
