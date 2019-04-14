@@ -1,2 +1,8 @@
 # Node Modules
 node_modules/
+
+# Visual Studio
+.vscode
+
+# Environment Variables
+env.py
