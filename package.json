@@ -3,7 +3,7 @@
   "name": "Give-A-GIF",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hschafer2017.github.io/ReactComponentExperimentsMaterialUI",
+  "homepage": "https://hschafer2017.github.io/Give-A-GIF/",
   "dependencies": {
     "@material-ui/core": "^3.3.2",
     "@material-ui/icons": "^3.0.1",
