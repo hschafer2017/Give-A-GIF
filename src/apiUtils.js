@@ -1,4 +1,4 @@
-let commands = ["Funny", "Happy", "Sad", "Hilarious", "Crazy", "Angry", "Donald+Trump", "Vladmir+Putin", "Obama", "OMG", 'cats', 'typing', 'crazy', 'laughing', 'WTF', 'NO', 'why', 'election+2016', 'Dwight+Schrute', 'Michael+Scott', 'Trump', 'dogs', 'wrong', 'The+Office', 'Samantha+Jones', 'Spongebob'];
+let randomWords = require('random-words');
 let request = new XMLHttpRequest();
 
 function displayGIFNicely(apiData) {
@@ -25,7 +25,7 @@ request.onreadystatechange = function() {
 
 // API KEY USING RANDOM GENERATOR FOR SEARCHED GIFS
 export function GIF_api() {
-    let search = commands[Math.floor(Math.random() * commands.length)];
+    let search = randomWords({exactly:1, wordsPerString:2});
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
     return false;
