@@ -5,7 +5,6 @@ function displayGIFNicely(apiData) {
     let newData = JSON.parse(apiData);
     
     let data = newData.data[0].embed_url;
-    console.log(data);
     document.getElementById("gif-image").innerHTML =
         // "&lt;embed src='" + data +  "'&gt;";
         "<embed src='" + data +  "'>";
