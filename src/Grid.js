@@ -10,11 +10,10 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
   },
   gridList: {
     width: '50vw',
-    height: 450,
+    height: '100vh',
   },
 });
 
@@ -23,7 +22,7 @@ function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={3}>
+      <GridList cellHeight={275} className={classes.gridList} cols={3}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>
             <img src={tile.img} alt={tile.title} />

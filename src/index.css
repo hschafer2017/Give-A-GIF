@@ -13,30 +13,15 @@ code {
     monospace;
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Architects Daughter', cursive;
-  font-size: 50px;
-}
-
 body {
   background: #fafafa;
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   
-}
-
-.button {
-  text-align: center;
-  padding-top: 20px;
-  padding-right: 42px;
 }
 
 #gif-images {
   position: fixed;
   left: 0;
-  top: 17%;
 }
 
 footer {
@@ -45,11 +30,5 @@ footer {
   bottom: 0;
   width: 100%;
   color: white;
-  text-align: center;
-}
-
-embed {
-  height: 250px;
-  width: 250px;
   text-align: center;
 }
