@@ -21,7 +21,6 @@ h1 {
 
 body {
   background: #fafafa;
-  background-image: url("images/computer.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -34,9 +33,9 @@ body {
   padding-right: 42px;
 }
 
-#gif-image {
+#gif-images {
   position: fixed;
-  left: 40%;
+  left: 0;
   top: 17%;
 }
 
