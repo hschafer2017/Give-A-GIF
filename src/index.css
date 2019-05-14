@@ -32,3 +32,9 @@ footer {
   color: white;
   text-align: center;
 }
+
+@media (max-width: 1000px) {
+  .ImageGridList-gridList-38 {
+    width: 100vw !important;
+  }
+}
