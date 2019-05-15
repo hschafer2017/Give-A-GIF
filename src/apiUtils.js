@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 
 let randomWords = require('random-words');
 let request = new XMLHttpRequest();
 
 var tileData = []
 
+const styles = {
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+    },
+    gridList: {
+      width: '50vw',
+      height: '100%',
+    },
+  };
 
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
@@ -53,16 +66,19 @@ class GifGrid extends Component {
         console.log(tileDataLoaded)
         return(
             tileDataLoaded ?
-            <ul>
-            {this.state.tileData.map(
-                tile => {
-                    return <li>{ tile.img }</li>;
-                })}
-            </ul>
+            <div style={styles.root}>
+                <GridList style={styles.gridList} cellHeight={275} cols={3}>
+                    {this.state.tileData.map(tile => (
+                    <GridListTile key={tile.img} cols={tile.cols || 1}>
+                        <iframe src={tile.img}></iframe>
+                    </GridListTile>
+                    ))}
+                </GridList>
+            </div>
             :
             <div>Your Gifs Are Loading...</div>
         );
-      }
+    }
   }
 
 
