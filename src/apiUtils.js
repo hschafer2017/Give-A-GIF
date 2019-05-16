@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import tileData from './tileData'
 
 let randomWords = require('random-words');
 let request = new XMLHttpRequest();
 
-var tileData = []
+var tileDatas = tileData
 
 const styles = {
     root: {
@@ -24,12 +25,10 @@ function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
     Array(9).fill().map((_,i) => 
-        tileData.push({
-            img: `${apiResponseData.data[i].embed_url}`,
-            cols: 2,
-        })
+        tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
-    return tileData
+    console.log(tileDatas)
+    return tileDatas
 }
 
 
@@ -37,12 +36,11 @@ class GifGrid extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          tileData: []
+          tileDatas: []
         }
     }
 
     componentDidMount() {
-    let request = new XMLHttpRequest();
     var self = this;
 
         request.onreadystatechange = function(e){
@@ -53,6 +51,7 @@ class GifGrid extends Component {
             }
             else if (this.readyState === 4 && this.status === 404) {
             }
+            console.log(tileData)
         }
 
     let search = randomWords({exactly:1, wordsPerString:2});
@@ -62,13 +61,12 @@ class GifGrid extends Component {
     }
 
     render() {
-        let tileDataLoaded = this.state.tileData.length > 0;
-        console.log(tileDataLoaded)
+        let tileDataLoaded = Object.keys(tileData[1]).length > 0;
         return(
             tileDataLoaded ?
             <div style={styles.root}>
                 <GridList style={styles.gridList} cellHeight={275} cols={3}>
-                    {this.state.tileData.map(tile => (
+                    {tileData.map(tile => (
                     <GridListTile key={tile.img} cols={tile.cols || 1}>
                         <iframe src={tile.img}></iframe>
                     </GridListTile>
@@ -90,7 +88,5 @@ export function GIF_api() {
     return false;
 }
 
-ReactDOM.render(
-    <GifGrid />,
-    document.getElementById('component-testing')
-  );
+
+export default GifGrid
