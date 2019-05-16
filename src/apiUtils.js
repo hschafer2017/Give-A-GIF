@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import tileData from './tileData'
@@ -14,6 +13,7 @@ const styles = {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
+      overflow: 'scroll',
     },
     gridList: {
       width: '50vw',
@@ -24,10 +24,9 @@ const styles = {
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
-    Array(9).fill().map((_,i) => 
+    Array(10).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
-    console.log(tileDatas)
     return tileDatas
 }
 
@@ -51,7 +50,6 @@ class GifGrid extends Component {
             }
             else if (this.readyState === 4 && this.status === 404) {
             }
-            console.log(tileData)
         }
 
     let search = randomWords({exactly:1, wordsPerString:2});
