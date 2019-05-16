@@ -24,7 +24,8 @@ const styles = {
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
-    Array(10).fill().map((_,i) => 
+    // Fill objects in tileDatas array with image URL from API response
+    Array(tileDatas.length).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
     return tileDatas
@@ -39,6 +40,7 @@ class GifGrid extends Component {
         }
     }
 
+    // Fetch API data after all other components are loaded
     componentDidMount() {
     var self = this;
 
@@ -52,17 +54,18 @@ class GifGrid extends Component {
             }
         }
 
+    // Send search request to API with random search words
     let search = randomWords({exactly:1, wordsPerString:2});
-
-    // Shows users what random words chose those GIFs
-    document.getElementById('search-query').innerHTML = 
-    `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
-    
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
 
+    // Shows users what random words chose those GIFs
+    document.getElementById('search-query').innerHTML = 
+    `<h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
+
     }
 
+    // Render Gif Grid with Gif from API response
     render() {
         let tileDataLoaded = Object.keys(tileData[1]).length > 0;
         return(
@@ -83,11 +86,8 @@ class GifGrid extends Component {
   }
 
 
-// API KEY USING RANDOM GENERATOR FOR SEARCHED GIFS
+// Reload page on function call to call API
 export function GIF_api() {
-    // let search = randomWords({exactly:1, wordsPerString:2});
-    // request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
-    // request.send();
     window.location.reload(); 
     return false;
 }
