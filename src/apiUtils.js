@@ -53,6 +53,11 @@ class GifGrid extends Component {
         }
 
     let search = randomWords({exactly:1, wordsPerString:2});
+
+    // Shows users what random words chose those GIFs
+    document.getElementById('search-query').innerHTML = 
+    `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
+    
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
 
@@ -66,7 +71,7 @@ class GifGrid extends Component {
                 <GridList style={styles.gridList} cellHeight={275} cols={3}>
                     {tileData.map(tile => (
                     <GridListTile key={tile.img} cols={tile.cols || 1}>
-                        <iframe src={tile.img}></iframe>
+                        <iframe src={tile.img} title='gif' height='279px'></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
@@ -80,9 +85,10 @@ class GifGrid extends Component {
 
 // API KEY USING RANDOM GENERATOR FOR SEARCHED GIFS
 export function GIF_api() {
-    let search = randomWords({exactly:1, wordsPerString:2});
-    request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
-    request.send();
+    // let search = randomWords({exactly:1, wordsPerString:2});
+    // request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
+    // request.send();
+    window.location.reload(); 
     return false;
 }
 
