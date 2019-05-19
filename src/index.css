@@ -21,6 +21,10 @@ code {
 #gif-images {
   position: fixed;
   left: 0;
+  overflow: scroll;
+  display: flex;
+  width: 100%; 
+  height: 100%;
 }
 
 footer {
@@ -39,25 +43,25 @@ footer {
 }
 
 iframe {
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     height: 100%;
     width: 100%;
-    border: none; 
+    border: none;
     margin: 0; 
     padding: 0; 
     display: block;
+    flex-grow: 1; 
 }
 
-#gif-button, #search-query {
+#gif-button, #search-query, #help-panel {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #search-query h2 {
-  margin-top: 5%;
+  margin-top: 10%;
 }

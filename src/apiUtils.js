@@ -19,12 +19,15 @@ const styles = {
       width: '50vw',
       height: '100%',
     },
+    gridListTile: {
+        height: '150px'
+    }
   };
 
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
-    Array(10).fill().map((_,i) => 
+    Array(15).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
     return tileDatas
@@ -68,10 +71,10 @@ class GifGrid extends Component {
         return(
             tileDataLoaded ?
             <div style={styles.root}>
-                <GridList style={styles.gridList} cellHeight={275} cols={3}>
+                <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
-                    <GridListTile key={tile.img} cols={tile.cols || 1}>
-                        <iframe src={tile.img} title='gif' height='279px'></iframe>
+                    <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1}>
+                        <iframe src={tile.img} title='gif'></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
