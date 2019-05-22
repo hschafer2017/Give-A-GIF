@@ -19,13 +19,15 @@ const styles = {
       width: '50vw',
       height: '100%',
     },
+    gridListTile: {
+        height: '150px'
+    }
   };
 
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
-    // Fill objects in tileDatas array with image URL from API response
-    Array(tileDatas.length).fill().map((_,i) => 
+    Array(15).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
     return tileDatas
@@ -60,8 +62,8 @@ class GifGrid extends Component {
     request.send();
 
     // Shows users what random words chose those GIFs
-    document.getElementById('search-query').innerHTML = 
-    `<h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
+    // document.getElementById('search-query').innerHTML = 
+    // `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
 
     }
 
@@ -71,10 +73,10 @@ class GifGrid extends Component {
         return(
             tileDataLoaded ?
             <div style={styles.root}>
-                <GridList style={styles.gridList} cellHeight={275} cols={3}>
+                <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
-                    <GridListTile key={tile.img} cols={tile.cols || 1}>
-                        <iframe src={tile.img} title='gif' height='279px'></iframe>
+                    <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1}>
+                        <iframe src={tile.img} title='gif'></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
