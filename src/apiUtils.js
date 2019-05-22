@@ -58,8 +58,8 @@ class GifGrid extends Component {
     let search = randomWords({exactly:1, wordsPerString:2});
 
     // Shows users what random words chose those GIFs
-    document.getElementById('search-query').innerHTML = 
-    `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
+    // document.getElementById('search-query').innerHTML = 
+    // `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
     
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();

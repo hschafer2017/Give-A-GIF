@@ -6,7 +6,7 @@ html, body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to top right, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
+  background: #fafafa;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,6 +60,10 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#query-card {
+  align-items: center,
 }
 
 #search-query h2 {
