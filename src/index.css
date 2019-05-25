@@ -63,7 +63,12 @@ iframe {
 }
 
 #query-card {
-  align-items: center,
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #search-query h2 {

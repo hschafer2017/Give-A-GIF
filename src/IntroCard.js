@@ -9,10 +9,14 @@ import GifButton from './Button'
 
 const styles = {
   card: {
-    minWidth: 300,
-    minHeight: 500,
+    minWidth: 250,
+    maxWidth: 450,
+    minHeight: 250,
     margin: '0 auto',
-    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    display: 'inline-block',
   },
   bullet: {
     display: 'inline-block',
