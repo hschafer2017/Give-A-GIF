@@ -13,6 +13,7 @@ const styles = {
     maxWidth: 450,
     minHeight: 250,
     margin: '0 auto',
+    marginTop: '20%',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',

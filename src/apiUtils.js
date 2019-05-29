@@ -20,7 +20,9 @@ const styles = {
       height: '100%',
     },
     gridListTile: {
-        height: '150px'
+        height: '150px',
+        alignItems: 'stretch',
+        justifyContent: 'center',
     }
   };
 
