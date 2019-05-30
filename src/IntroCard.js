@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import GifButton from './Button'
+import { search } from './apiUtils'
 
 const styles = {
   card: {
@@ -38,7 +39,6 @@ const styles = {
 
 function IntroCard(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
@@ -46,9 +46,7 @@ function IntroCard(props) {
         <Typography className={classes.title} color="textSecondary" gutterBottom id="search-query">
         </Typography>
         <Typography variant="h5" component="h2">
-          Word 1
-          {bull}
-          Word 2
+          {search}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
             Click "Show Me the Gifs" to search again

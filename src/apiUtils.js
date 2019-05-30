@@ -7,6 +7,7 @@ let randomWords = require('random-words');
 let request = new XMLHttpRequest();
 
 var tileDatas = tileData
+export const search = randomWords({exactly:1, wordsPerString:2});
 
 const styles = {
     root: {
@@ -59,13 +60,8 @@ class GifGrid extends Component {
         }
 
     // Send search request to API with random search words
-    let search = randomWords({exactly:1, wordsPerString:2});
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
-
-    // Shows users what random words chose those GIFs
-    // document.getElementById('search-query').innerHTML = 
-    // `<br><br><h2>A random word generator searched for GIFs associated with these two words: ${search}.</h2>`
 
     }
 
@@ -95,6 +91,5 @@ export function GIF_api() {
     window.location.reload(); 
     return false;
 }
-
 
 export default GifGrid
