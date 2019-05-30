@@ -28,6 +28,10 @@ const styles = {
   title: {
     fontSize: 14,
   },
+  query: {
+    textTransform: 'capitalize',
+    padding: 5,
+  },
   pos: {
     marginBottom: 12,
   },
@@ -37,16 +41,21 @@ const styles = {
 }
 };
 
+
 function IntroCard(props) {
   const { classes } = props;
+  const bull = <span className={classes.bullet}>•</span>;
+  const splitSearchQuery = search[0].split(/(\s+)/).filter(e => e.length > 1)
 
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom id="search-query">
         </Typography>
-        <Typography variant="h5" component="h2">
-          {search}
+        <Typography variant="h5" component="h2" className={classes.query}>
+          {splitSearchQuery[0]}
+          {bull}
+          {splitSearchQuery[1]}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
             Click "Show Me the Gifs" to search again
