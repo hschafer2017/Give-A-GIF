@@ -11,6 +11,8 @@
     "random-words": "^1.1.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.0.5"
   },
   "scripts": {
