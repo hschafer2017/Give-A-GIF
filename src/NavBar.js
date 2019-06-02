@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import IconButton from '@material-ui/core/IconButton';
 import FilterVintage from '@material-ui/icons/FilterVintage';
-import Gif from '@material-ui/icons/Gif';
+import Code from '@material-ui/icons/Code';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
@@ -45,17 +45,17 @@ class GifNavBar extends React.Component {
     };
   
     handleCloseSource = () => {
-      window.location = 'https://github.com/hschafer2017/Give-A-GIF';
+      window.open('https://github.com/hschafer2017/Give-A-GIF', '_blank');
       this.setState({ anchorEl: null });
     };
 
     handleCloseAbout = () => {
-        window.location = 'https://github.com/hschafer2017/Give-A-GIF/blob/master/README.md';
+        window.open('https://github.com/hschafer2017/Give-A-GIF/blob/master/README.md', '_blank');
         this.setState({ anchorEl: null });
     };
     
     handleCloseGiphy = () => {
-        window.location = 'https://developers.giphy.com/docs/';
+        window.open('https://developers.giphy.com/docs/', '_blank');
         this.setState({ anchorEl: null });
     };
     
@@ -86,7 +86,7 @@ render() {
                   onClick={this.handleMenu}
                   color="inherit"
                 >
-                  <Gif />
+                  <Code />
                 </IconButton>
                 <Menu
                   id="menu-appbar"
