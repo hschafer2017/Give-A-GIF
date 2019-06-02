@@ -14,7 +14,7 @@ const styles = {
     maxWidth: 450,
     minHeight: 250,
     margin: '0 auto',
-    marginTop: '20%',
+    marginTop: '18%',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -22,7 +22,7 @@ const styles = {
   },
   bullet: {
     display: 'inline-block',
-    margin: '0 2px',
+    margin: '0 5px',
     transform: 'scale(0.8)',
   },
   title: {
