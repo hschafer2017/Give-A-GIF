@@ -30,7 +30,7 @@ const styles = {
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
-    Array(15).fill().map((_,i) => 
+    Array(24).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
     return tileDatas
@@ -74,7 +74,7 @@ class GifGrid extends Component {
                 <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
                     <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1}>
-                        <iframe src={tile.img} title='gif'></iframe>
+                        <iframe src={tile.img} title='gif' frameBorder='0' allowFullScreen></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
