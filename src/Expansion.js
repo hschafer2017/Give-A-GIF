@@ -9,7 +9,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
   root: {
-    width: '30%',
+    minWidth: 250,
+    maxWidth: 450,
+    marginTop: '10%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -46,7 +48,7 @@ class ControlledExpansionPanels extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              The GIFs can take a bit longer due to your internet connection or because the 'Show Me the GIFs' has been pressed too many times. Wait a few moments, and try again.
+              The GIFs can take a bit longer due to your internet connection or because the 'Show Me the GIFs' button has been pressed too many times. Wait a few moments, and try again.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
