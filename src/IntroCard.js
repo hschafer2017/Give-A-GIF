@@ -62,7 +62,7 @@ function IntroCard(props) {
         </Typography>
         <Typography className={classes.p} component="p">
           <br />
-          {'GIFs were searched for using these two words provided by a random word generator. Hover over any GIF to see more GIFs like it.'}
+          {'GIFs were searched for using these two words provided by a random word generator. Click on any GIF to see more GIFs like it.'}
         </Typography>
       </CardContent>
       <CardActions>
