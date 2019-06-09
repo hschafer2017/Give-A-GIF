@@ -17,7 +17,6 @@ const styles = {
       overflow: 'scroll',
     },
     gridList: {
-      width: '50vw',
       height: '100%',
     },
     gridListTile: {
