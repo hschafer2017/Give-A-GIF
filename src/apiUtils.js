@@ -20,9 +20,13 @@ const styles = {
       height: '100%',
     },
     gridListTile: {
-        height: '150px',
-        alignItems: 'stretch',
+        height: '20%',
+        width: '33%',
         justifyContent: 'center',
+        direction: "row",
+        justify: "center",
+        alignItems: "flex-start",
+        position: 'relative',
     }
   };
 
@@ -72,7 +76,7 @@ class GifGrid extends Component {
             <div style={styles.root}>
                 <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
-                    <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1}>
+                    <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1} spacing={1}>
                         <iframe src={tile.img} title='gif' frameBorder='0' allowFullScreen></iframe>
                     </GridListTile>
                     ))}
