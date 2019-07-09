@@ -36,6 +36,12 @@ code {
   }
 }
 
+@media (max-width: 760px) {
+  #gif-images {
+    padding-top: 20px;
+  }
+}
+
 iframe {
     top: 0;
     bottom: 0;
@@ -68,3 +74,4 @@ iframe {
 #search-query h2 {
   margin-top: 10%;
 }
+

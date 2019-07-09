@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import MediaQuery from 'react-responsive'
+
 import tileData from './tileData'
 
 let randomWords = require('random-words');
@@ -23,10 +25,24 @@ const styles = {
         height: '20%',
         width: '33%',
         justifyContent: 'center',
-        direction: "row",
-        justify: "center",
-        alignItems: "flex-start",
+        direction: 'row',
+        justify: 'center',
+        alignItems: 'flex-start',
         position: 'relative',
+    },
+    gridListTitleMobile: {
+        height: '150px',
+        width: '100%',
+        ustifyContent: 'center',
+        direction: 'row',
+        justify: 'center',
+        alignItems: 'flex-start',
+        position: 'relative',
+    },
+    iFrame: {
+        position: 'relative', 
+        height: '100%',
+        width: '100%',
     }
   };
 
@@ -74,13 +90,24 @@ class GifGrid extends Component {
         return(
             tileDataLoaded ?
             <div style={styles.root}>
+            <MediaQuery minDeviceWidth={1024}>
                 <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
                     <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1} spacing={1}>
-                        <iframe src={tile.img} title='gif' frameBorder='0' allowFullScreen></iframe>
+                        <iframe src={tile.img} style={styles.iFrame} title='gif' frameBorder='0' allowFullScreen></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
+                </MediaQuery>
+                <MediaQuery minDeviceWidth={320} maxDeviceWidth={1023}>
+                <GridList style={styles.gridList} cellHeight={90} cols={1} paddingTop='10px'>
+                    {tileData.map(tile => (
+                    <GridListTile key={tile.img} style={styles.gridListTitleMobile} cols={tile.cols || 1}>
+                        <iframe src={tile.img} style={styles.iFrame} title='gif' height='180%' frameBorder='0' allowFullScreen></iframe>
+                    </GridListTile>
+                    ))}
+                </GridList>
+                </MediaQuery>
             </div>
             :
             <div>Your Gifs Are Loading...</div>
