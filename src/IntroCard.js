@@ -45,6 +45,7 @@ const styles = {
 function IntroCard(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
+  // Split the words searching for the gifs so they can be easily read
   const splitSearchQuery = search[0].split(/(\s+)/).filter(e => e.length > 1)
 
   return (

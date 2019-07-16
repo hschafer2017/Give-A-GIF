@@ -30,6 +30,7 @@ const styles = {
   },
 };
 
+// Include all links in navbar
 class GifNavBar extends React.Component {
     state = {
       auth: true,

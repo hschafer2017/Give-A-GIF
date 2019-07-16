@@ -17,6 +17,7 @@ const styles = {
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'scroll',
+      height: '100%'
     },
     gridList: {
       height: '100%',
@@ -49,6 +50,7 @@ const styles = {
 function displayGIFNicely(apiData) {
     let apiResponseData = JSON.parse(apiData);
 
+    // Map through tileDatas array to populate Image in tileDatas object
     Array(24).fill().map((_,i) => 
         tileDatas[i]['img'] = `${apiResponseData.data[i].embed_url}`,
     )
@@ -99,6 +101,7 @@ class GifGrid extends Component {
                     ))}
                 </GridList>
                 </MediaQuery>
+                {/* Use Media query if smaller size screen */}
                 <MediaQuery minDeviceWidth={320} maxDeviceWidth={1023}>
                 <GridList style={styles.gridList} cellHeight={90} cols={1} paddingTop='10px'>
                     {tileData.map(tile => (
