@@ -84,17 +84,6 @@ class GifGrid extends Component {
     // Send search request to API with random search words
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
-    
-    // Add object-fit:initial styling to embedded iframe
-    setTimeout(() => {
-    var theList = document.getElementsByTagName('iframe')
-    console.log(theList)
-    for (let i = 0; i < theList.length; i++) {
-    let gifHeadTag = theList[i].contentWindow.document.getElementsByTagName('head')
-    console.log(gifHeadTag)
-    }
-    console.log('done')
-    }, 10000)
 
     }
 
