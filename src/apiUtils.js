@@ -40,10 +40,11 @@ const styles = {
         alignItems: 'flex-start',
         position: 'relative',
     },
-    iFrame: {
+    iframe: {
         position: 'relative', 
         height: '100%',
         width: '100%',
+        resizeMode: 'stretch',
     }
   };
 
@@ -83,6 +84,16 @@ class GifGrid extends Component {
     // Send search request to API with random search words
     request.open("GET", "https://giveagif.herokuapp.com/gifs/" + search);
     request.send();
+    
+    // Add object-fit:initial styling to embedded iframe
+    setTimeout(() => {
+    var theList = document.getElementsByTagName('iframe')
+    console.log(theList)
+    for (let i = 0; i < theList.length; i++) 
+    gifHeadTag = theList[i].contentWindow.document.getElementsByTagName('head')
+    console.log(gifHeadTag)
+    console.log('done')
+    }, 10000)
 
     }
 
@@ -96,7 +107,7 @@ class GifGrid extends Component {
                 <GridList style={styles.gridList} cellHeight={150} cols={3}>
                     {tileData.map(tile => (
                     <GridListTile key={tile.img} style={styles.gridListTile} cols={tile.cols || 1} spacing={1}>
-                        <iframe src={tile.img} style={styles.iFrame} title='gif' frameBorder='0' allowFullScreen></iframe>
+                        <iframe src={tile.img} style={styles.iframe} title='gif' frameBorder='0' allowFullScreen></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
@@ -106,7 +117,7 @@ class GifGrid extends Component {
                 <GridList style={styles.gridList} cellHeight={90} cols={1} paddingTop='10px'>
                     {tileData.map(tile => (
                     <GridListTile key={tile.img} style={styles.gridListTitleMobile} cols={tile.cols || 1}>
-                        <iframe src={tile.img} style={styles.iFrame} title='gif' height='180%' frameBorder='0' allowFullScreen></iframe>
+                        <iframe src={tile.img} style={styles.iframe} title='gif' height='180%' frameBorder='0' allowFullScreen></iframe>
                     </GridListTile>
                     ))}
                 </GridList>
