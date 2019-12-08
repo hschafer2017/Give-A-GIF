@@ -2,7 +2,6 @@
 
 This web app originally started out as a Hackathon Project, experimenting with RESTful APIs, using a [GIPHY API](https://developers.giphy.com/).
 
-A live preview can be viewed [here](https://hschafer2017.github.io/Give-A-GIF/).
 
 #### THIS IS FOR EDUCATIONAL PURPOSES ONLY. THERE WILL BE NO COMMERCIAL USE OF THIS PRODUCT.
 
